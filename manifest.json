@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Scrape Profile Ratings",
+    "version": "1.0",
+    "description": "While on a valid Letterboxd profile, its Letterboxd film ratings will be exported to a .csv file",
+    "icons": {
+        "16": "icons/lbs-icon-16.png",
+        "32": "icons/lbs-icon-32.png",
+        "48": "icons/lbs-icon-48.png",
+        "128": "icons/lbs-icon-128.png"
+    },
+    "permissions": [
+        "storage", "downloads", "cookies"
+    ],
+    "host_permissions": [
+        "http://127.0.0.1:5000/*",
+        "*://*.letterboxd.com/*"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/verify_url.js",
+                "scripts/animation.js"
+            ],
+            "matches": [
+                "*://*.letterboxd.com/",
+                "*://*.letterboxd.com/*"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "check_profile.js"
+    },
+    "web_accessible_resources": [{
+        "resources": ["scripts/animation/*"],
+        "matches": ["<all_urls>"]
+    }],
+    "action": {}
+}
