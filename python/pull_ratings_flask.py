@@ -3,7 +3,7 @@ from flask import Flask, send_file, request, jsonify
 from pull_ratings_script import run_selenium_script
 from flask_cors import CORS
 
-# NOTE: "http://127.0.0.1:5000" is the Flask server opened on my end.
+# NOTE: "http://***.*.*.*:****" is the Flask server opened on my end. (Replace instances of this substring with your Flask server URL).
 
 app = Flask(__name__) # Flask App Initialization (create instance of Flask App).
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)

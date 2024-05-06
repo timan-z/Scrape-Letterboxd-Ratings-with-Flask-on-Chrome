@@ -40,7 +40,7 @@ chrome.action.onClicked.addListener(tab => {
 
                     // Send the Fetch request to the Flask server to initiate the Python-Selenium script for scraping ratings:
                     // NOTE: (to self), remember to ensure you are using backticks in the fetch below rather than single quotes.
-                    fetch(`http://127.0.0.1:5000/scrape_ratings?url=${encodeURIComponent(tab.url)}`, {
+                    fetch(`http://***.*.*.*:****/scrape_ratings?url=${encodeURIComponent(tab.url)}`, {
                         method: 'GET',
                         mode: 'cors'
                     })
@@ -59,7 +59,7 @@ chrome.action.onClicked.addListener(tab => {
                             /* The .csv file will be stored on the Flask server, which I can target through the /get_csv/<file name> route
                             and download it through the current Chrome tab (using chrome.downloads API): */
                             chrome.downloads.download({
-                                url: `http://127.0.0.1:5000/get_csv/${csv_download}`,
+                                url: `http://***.*.*.*:****/get_csv/${csv_download}`,
                                 filename: csv_download,
                                 saveAs: false // NOTE: true/false toggles whether or not the download appears as a "Save As" pop-up or if it occurs automatically.
                             });
