@@ -22,7 +22,7 @@ This extension demonstrates a range of technical skills, namely Chrome extension
 
 5. **CSV File Generation and Download**: Once the data is collected, the Flask server compiles the information into a CSV file (titled **<_profile_username_>_ratings.csv**). The background script then triggers an automatic download of the file through the current browser tab. (The CSV file is retrieved from the Flask server through a GET request from a '**/get_csv/<file_name>**' route defined in **pull_ratings_flask.py**).
 <br>
-File **extension_demonstration.mkv** is a video that illustrates how this extension should look and function (from a user's point of view).
+(File <b>extension_demonstration.mkv</b> is a video that illustrates how this extension should look and function, from a user's point of view).
 
 ## Project Structure
 
